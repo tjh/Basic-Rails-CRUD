@@ -1,0 +1,6 @@
+<%= form_for @post do |form| %>
+  <%= form.text_field :title %></br>
+  <%= "Title #{@post.errors[:title]}" if @post.errors[:title] %></br>
+  <%= form.text_area :body %></br>
+  <%= form.submit %>
+<% end -%>

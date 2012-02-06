@@ -1,0 +1,22 @@
+<h1>List of posts</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, post %></td>
+      <td>
+        <%= link_to 'Edit', edit_post_path(post.id) %>
+        <%= link_to 'Delete', post, :method => 'delete' %>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+
+<p><%= link_to 'New Post', new_post_path %></p>
